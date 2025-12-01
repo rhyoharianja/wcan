@@ -1,5 +1,5 @@
 {
-  "name": "@rhyoharianja/wcan",
+  "name": "wcan",
   "version": "0.0.3",
   "description": "Whatsapp Cloud API NodeJS SDK",
   "type": "module",
