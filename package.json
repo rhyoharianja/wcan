@@ -20,7 +20,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/rhyoharianja/wcan.git"
+    "url": "https://github.com/rhyoharianja/wcan.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsup",
