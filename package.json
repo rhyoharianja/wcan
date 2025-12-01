@@ -4,11 +4,38 @@
   "description": "Whatsapp Cloud API NodeJS SDK",
   "type": "module",
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rhyoharianja/wcan.git"
+  },
   "scripts": {
     "build": "tsup",
-    "test": "vitest"
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "whatsapp",
+    "cloud api",
+    "sdk",
+    "typescript",
+    "nodejs",
+    "meta",
+    "business"
+  ],
   "author": "Suryo Galih Kencana H <harianja.suryo@gmail.com>",
   "license": "ISC",
   "dependencies": {
