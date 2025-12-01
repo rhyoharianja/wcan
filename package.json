@@ -1,6 +1,6 @@
 {
   "name": "wcan",
-  "version": "0.0.6",
+  "version": "0.0.2",
   "description": "Whatsapp Cloud API NodeJS SDK",
   "type": "module",
   "main": "./dist/index.js",
