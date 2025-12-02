@@ -31,4 +31,4 @@ jobs:
       - name: Publish to NPM
         run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.password }}
+          NODE_AUTH_TOKEN: ${{ secrets.PASSWORD }}
