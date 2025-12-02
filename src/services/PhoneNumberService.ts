@@ -9,15 +9,31 @@ export interface PhoneNumberResponse {
   }>;
 }
 
+export interface MigrationOptions {
+  backup: {
+    data: string;
+    password: string;
+  };
+}
+
 export class PhoneNumberService extends BaseService {
   /**
    * Register Phone Number
+   * 
+   * @param pin - A 6-digit pin for two-step verification.
+   * @param migrationOptions - Optional parameters for migrating from On-Premises API.
    */
-  async register(pin: string): Promise<{ success: boolean }> {
-    const response = await this.http.post('/register', {
+  async register(pin: string, migrationOptions?: MigrationOptions): Promise<{ success: boolean }> {
+    const payload: any = {
       messaging_product: 'whatsapp',
       pin
-    });
+    };
+
+    if (migrationOptions) {
+      payload.backup = migrationOptions.backup;
+    }
+
+    const response = await this.http.post('/register', payload);
     return response.data;
   }
 

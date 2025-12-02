@@ -211,16 +211,30 @@ await client.profile.updateProfile({
 ```
 
 ### Phone Number Management
+Register or deregister a phone number.
 
 ```typescript
-// Register Phone
-await client.phoneNumbers.register('123456'); // 6-digit PIN
+// Register a phone number with a PIN
+await client.phoneNumber.register('123456');
 
-// Deregister Phone
-await client.phoneNumbers.deregister();
+// Deregister a phone number
+await client.phoneNumber.deregister();
 
-// Get Phone Number Info
-const info = await client.phoneNumbers.getMyPhoneNumber();
+// Get current phone number details
+const myPhone = await client.phoneNumber.getMyPhoneNumber();
+console.log(myPhone);
+```
+
+### Migrating from On-Premises API
+If you are migrating from the On-Premises API, you can provide the backup data during registration.
+
+```typescript
+await client.phoneNumber.register('123456', {
+  backup: {
+    data: 'YOUR_BACKUP_DATA_STRING',
+    password: 'YOUR_BACKUP_PASSWORD'
+  }
+});
 ```
 
 ### Business Account (WABA)
